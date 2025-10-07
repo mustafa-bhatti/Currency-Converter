@@ -1,0 +1,16 @@
+import { fetchData, fetchCurr } from './api.js';
+const fromCurrency = document.querySelector('#fromCurrency');
+const toCurrency = document.querySelector('#toCurrency');
+
+const renderCurrNames = async function () {
+  const currNames = await fetchCurr();
+  console.log(currNames);
+  currNames.forEach((currentCurrency) => {
+    const option = document.createElement('option');
+    option.value = currentCurrency;
+    option.textContent = currentCurrency;
+    fromCurrency.appendChild(option);
+    toCurrency.appendChild(option);
+  });
+};
+export { renderCurrNames };
