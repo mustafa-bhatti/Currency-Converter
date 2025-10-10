@@ -11,10 +11,7 @@
       <h1>Currency Converter</h1>
       <form method="get" name="currencyForm">
         <label for="fromCurrency">From:</label>
-        <select id="fromCurrency" required>
-       
-
-        </select>
+        <select id="fromCurrency" required></select>
 
         <input type="number" id="amount" placeholder="Enter amount" required />
 
@@ -24,6 +21,11 @@
         <button type="button" id="convertBtn">Convert</button>
       </form>
     </div>
+    <div class="result" id="result">
+        <h2>Converted Amount:</h2>
+        <p id="convertedAmount">--</p>
+    </div>
+
     <script type="module" src="script.js"></script>
   </body>
 </html>

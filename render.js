@@ -1,7 +1,7 @@
 import { fetchData, fetchCurr } from './api.js';
 const fromCurrency = document.querySelector('#fromCurrency');
 const toCurrency = document.querySelector('#toCurrency');
-
+const ammountP = document.querySelector('#convertedAmount');
 const renderCurrNames = async function () {
   const currNames = await fetchCurr();
   console.log(currNames);
@@ -17,4 +17,9 @@ const renderCurrNames = async function () {
     toCurrency.appendChild(option2);
   });
 };
-export { renderCurrNames };
+
+const renderAmmount = function (ammount) {
+  ammountP.textContent = ammount;
+};
+
+export { renderCurrNames, renderAmmount };
